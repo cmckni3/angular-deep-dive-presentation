@@ -1,7 +1,8 @@
 ## Overview
 
-- Brief introduction to the Angular Cli (@angular/cli on npm) 
-- Briefly discuss the main parts of an Angular application: Modules, Directives, Services, and Pipes
+Many pieces of the Angular ecosystem to cover!
+
+- Angular Cli (@angular/cli on npm)
+- Angular: Directives, Services, Modules, and Pipes
 - RxJS
 - The HTTP service
-- Best Practices
