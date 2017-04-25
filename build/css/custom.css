@@ -1,0 +1,38 @@
+/* custom styles can go here */
+
+.snake-point {
+  display: block;
+  width: 100%;
+}
+
+.snake-point:before {
+  display: block;
+  width: 36px;
+  height: 36px;
+  background: url(/images/warning-yellow-icon-9.png) no-repeat 0 0;
+  background-size: 100%;
+  content: "";
+}
+
+#hello del {
+  text-decoration-color: red;
+}
+
+#hello #title {
+  display: block;
+  transform: rotate(-15deg);
+  position: relative;
+  top: 0.1em;
+  left: -1.75em;
+  z-index: 1;
+}
+
+.reveal blockquote {
+  font-size: 24px;
+}
+
+#angular-component-types img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
