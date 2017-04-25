@@ -45,6 +45,22 @@
 <h3>By Chris McKnight</h3>
 </section>
 
+<section id="chapter-about-me" class="chapter">
+<section id="about-me-intro" class="slide" data-has-notes="false">
+<h2>About Me</h2><p><img src="images/me.jpg" alt=""></p>
+</section>
+
+<section id="about-me-background" class="slide" data-has-notes="true">
+<h2>About Me</h2><ul>
+<li>Graduated from LSU in Computer Science with a concentration in Mathematics</li>
+<li>Background in C++, PHP, and JavaScript</li>
+</ul><aside class="notes"><p>Currently, I am a software developer at Franklin American Mortgage.
+I started building PHP applications at 16 years old. I transitioned to writing
+JavaScript-heavy applications in 2009 using &quot;Web 2.0&quot; technologies, such as,
+AJAX.</p></aside>
+</section>
+</section>
+
 <section id="overview" class="slide" data-has-notes="false">
 <h2>Overview</h2><p>Many pieces of the Angular ecosystem to cover!</p>
 <ul>
@@ -55,69 +71,15 @@
 </ul>
 </section>
 
-<section id="chapter-ng-cli" class="chapter">
-<section id="ng-cli-intro" class="slide" data-has-notes="true">
-<h2>Angular Cli</h2><blockquote>
-<p>The Angular CLI is a command line interface tool that can create a project, add files, and perform a variety of ongoing development tasks such as testing, bundling, and deployment.</p>
-</blockquote><aside class="notes"><p>Why would you want to use the Angular cli?</p>
-<p>Rapid development, Angular build setup is tedious</p></aside>
-</section>
-
-<section id="ng-cli-install" class="slide" data-has-notes="true">
-<h2>Angular Cli Installation</h2><pre><code class="lang-sh">npm i -g @angular/cli
-<span class="hljs-comment"># yarn global add @angular/cli</span>
-</code></pre><aside class="notes"><p>Angular Cli allows developers to rapidly develop applications with minimal setup</p></aside>
-</section>
-
-<section id="ng-cli-create-project" class="slide" data-has-notes="true">
-<h2>Create a project</h2><pre><code class="lang-sh">ng new --link-cli --routing --style scss my-project
-</code></pre>
-<pre><code>├── e2e
-├── package<span class="hljs-selector-class">.json</span>
-├── protractor<span class="hljs-selector-class">.conf</span><span class="hljs-selector-class">.js</span>
-├── src
-│   ├── app
-│   │   ├── app-routing<span class="hljs-selector-class">.module</span><span class="hljs-selector-class">.ts</span>
-│   │   ├── app<span class="hljs-selector-class">.component</span><span class="hljs-selector-class">.ts</span>
-│   │   └── app<span class="hljs-selector-class">.module</span><span class="hljs-selector-class">.ts</span>
-│   ├── index<span class="hljs-selector-class">.html</span>
-│   ├── main<span class="hljs-selector-class">.ts</span>
-│   ├── polyfills<span class="hljs-selector-class">.ts</span>
-│   ├── styles<span class="hljs-selector-class">.scss</span>
-├── tsconfig<span class="hljs-selector-class">.json</span>
-└── yarn.lock
-</code></pre><aside class="notes"><p>Global defaults can be set using <code>ng set --global</code> or by manually editing <code>~/.angular-cli.json</code></p>
-<p>Example: <code>ng set --global defaults.styleExt=scss</code></p></aside>
-</section>
-
-<section id="ng-cli-cheat-sheet" class="slide" data-has-notes="true">
-<h2>Angular Cli common commands</h2><ul>
-<li>new</li>
-<li>serve (server)</li>
-<li>build</li>
-<li>generate</li>
-<li>test</li>
-<li>e2e</li>
-<li>lint</li>
-</ul><aside class="notes"><p>Some commands are aliases</p>
-<p>serve =&gt; s
-build =&gt; b
-generate =&gt; g
-test =&gt; t
-e2e =&gt; e
-lint =&gt; l</p></aside>
-</section>
+<section id="angular" class="slide" data-has-notes="true">
+<h2>Angular</h2><blockquote>
+<p>Angular is a development platform for building mobile and desktop web applications.</p>
+</blockquote>
+<p>One framework.</p>
+<p>Mobile &amp; Desktop</p><aside class="notes"><p>Angular is a TypeScript-based open-source front-end web application platform led by the Angular Team at Google.</p></aside>
 </section>
 
 <section id="chapter-angular" class="chapter">
-<section id="angular-intro" class="slide" data-has-notes="false">
-<h2>Angular</h2><p>One framework.</p>
-<p>Mobile &amp; Desktop</p>
-<blockquote>
-<p>Angular is a development platform for building mobile and desktop web applications.</p>
-</blockquote>
-</section>
-
 <section id="angular-decorators" class="slide" data-has-notes="true">
 <h2>Decorators</h2><blockquote>
 <p>A function that adds metadata to a class, its members (properties, methods) and function arguments.</p>
@@ -132,7 +94,6 @@ lint =&gt; l</p></aside>
 
 <span class="hljs-keyword">class</span> Person {
   ...
-
   <span class="hljs-comment">// deprecate the name method using a decorator</span>
   <span class="hljs-meta">@deprecate</span>(<span class="hljs-string">'Use the fullName method instead'</span>)
   <span class="hljs-keyword">get</span> name() {
@@ -161,42 +122,16 @@ lint =&gt; l</p></aside>
 </ul><aside class="notes"><p>We will explore all 3 categories of <code>directives</code></p></aside>
 </section>
 
-<section id="angular-attribute-directives" class="slide" data-has-notes="true">
-<h2>Attribute Directives</h2><blockquote>
-<p>A category of directive that can listen to and modify the behavior of other HTML elements, attributes, properties, and components. They are usually represented as HTML attributes, hence the name.</p>
-</blockquote>
-<p>Example demonstrating the <code>ngClass</code> attribute directive and a custom <code>myHighlight</code> directive</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">my-app</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> [<span class="hljs-attr">ngClass</span>]=<span class="hljs-string">"{active: active}"</span> [<span class="hljs-attr">myHighlight</span>]=<span class="hljs-string">"color"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">my-app</span>&gt;</span>
-</code></pre><aside class="notes"><p>See <a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html">https://angular.io/docs/ts/latest/guide/attribute-directives.html</a> for more</p></aside>
-</section>
-
-<section id="angular-structural-directives" class="slide" data-has-notes="true">
-<h2>Structural Directives</h2><blockquote>
-<p>A category of directive that can shape or reshape HTML layout, typically by adding and removing elements in the DOM.</p>
-</blockquote>
-<ul>
-<li>ngIf</li>
-<li>ngFor</li>
-<li>ngSwitch</li>
-</ul><aside class="notes"><p>For more see <a href="https://angular.io/docs/ts/latest/guide/structural-directives.html">https://angular.io/docs/ts/latest/guide/structural-directives.html</a></p></aside>
-</section>
-
-<section id="angular-structural-directives" class="slide" data-has-notes="true">
-<h2>Structural Directive Example</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let person of people"</span>&gt;</span>{{person.name}}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</code></pre><aside class="notes"><p>The example shows the use of <code>ngFor</code> to generate an element, <code>li</code>, for each person&#39;s name.</p></aside>
-</section>
-
-<section id="angular-components" class="slide" data-has-notes="true">
+<section id="angular-components" class="slide" data-has-notes="false">
 <h2>Components</h2><ul>
 <li>Fundamental building block to Angular</li>
 <li>Handles exposing data to view and handling user interaction</li>
 <li>A directive containing a template</li>
 </ul>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+</section>
+
+<section id="angular-component-example" class="slide" data-has-notes="true">
+<h2>Components</h2><pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 
 <span class="hljs-meta">@Component</span>({
   selector: <span class="hljs-string">'home'</span>,
@@ -214,30 +149,34 @@ lint =&gt; l</p></aside>
 <p>Components can be split into 2 categories of components, containers (smart) and presentational (dumb).</p></aside>
 </section>
 
+<section id="angular-attribute-directives" class="slide" data-has-notes="true">
+<h2>Attribute Directives</h2><blockquote>
+<p>A category of directive that can listen to and modify the behavior of other HTML elements, attributes, properties, and components. They are usually represented as HTML attributes, hence the name.</p>
+</blockquote>
+<p>Common attribute directives:</p>
+<ul>
+<li>ngClass</li>
+<li>ngStyle</li>
+</ul><aside class="notes"><p>See <a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html">https://angular.io/docs/ts/latest/guide/attribute-directives.html</a> for more</p></aside>
+</section>
+
+<section id="angular-structural-directives" class="slide" data-has-notes="true">
+<h2>Structural Directives</h2><blockquote>
+<p>A category of directive that can shape or reshape HTML layout, typically by adding and removing elements in the DOM.</p>
+</blockquote>
+<ul>
+<li>ngIf</li>
+<li>ngFor</li>
+<li>ngSwitch</li>
+</ul><aside class="notes"><p>For more see <a href="https://angular.io/docs/ts/latest/guide/structural-directives.html">https://angular.io/docs/ts/latest/guide/structural-directives.html</a></p></aside>
+</section>
+
 <section id="angular-container-components" class="slide" data-has-notes="true">
 <h2>Container components</h2><h4>a.k.a. &quot;smart&quot; components</h4><ul>
 <li>Root level, routable components</li>
 <li>Access application state from ngrx, services, etc</li>
 <li>Handle events emitted from child components within the same view tree</li>
 </ul>
-</section>
-
-<section id="angular-container-components" class="slide" data-has-notes="false">
-<h2>Container component Example</h2><pre><code class="lang-typescript"><span class="hljs-meta">@Component</span>({
-    selector: <span class="hljs-string">'app'</span>,
-    template: <span class="hljs-string">`&lt;h3&gt;Party Planner&lt;/h3&gt;
-      &lt;person-input
-        (addPerson)="addPerson($event)"
-      &gt;
-      &lt;/person-input&gt;`</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> App {
-    <span class="hljs-keyword">public</span> people;
-    addPerson(name) {
-      <span class="hljs-keyword">this</span>.people.push({id: id(), name});
-    }
-}
-</code></pre>
 </section>
 
 <section id="angular-presentational-components" class="slide" data-has-notes="true">
@@ -250,38 +189,37 @@ lint =&gt; l</p></aside>
 <p>Overview of managing state with ngrx: <a href="http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/">http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/</a></p></aside>
 </section>
 
-<section id="angular-presentational-components" class="slide" data-has-notes="false">
-<h2>Presentational Component Example</h2><pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Output } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
-
-<span class="hljs-meta">@Component</span>({
-    selector: <span class="hljs-string">'person-input'</span>,
-    template: <span class="hljs-string">`
-      &lt;input #personName type="text" /&gt;
-      &lt;button (click)="add(personName)"&gt;Add Person&lt;/button&gt;
-    `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> PersonInput {
-    <span class="hljs-meta">@Output</span>() addPerson = <span class="hljs-keyword">new</span> EventEmitter();
-
-    add(personInput){
-      <span class="hljs-keyword">this</span>.addPerson.emit(personInput.value);
-      personInput.value = <span class="hljs-string">''</span>;
-    }
-}
-</code></pre>
-</section>
-
 <section id="angular-component-types" class="slide" data-has-notes="true">
 <h2>Container &amp; presentational components</h2><p><img src="images/component-types.png" alt=""></p><aside class="notes"><p>The image represents a component tree of a container component and its presentational components</p>
 <p>See <a href="https://gist.github.com/btroncone/a6e4347326749f938510#utilizing-container-components">https://gist.github.com/btroncone/a6e4347326749f938510#utilizing-container-components</a> for more information</p></aside>
+</section>
+
+<section id="angular-component-lifecycle" class="slide" data-has-notes="true">
+<h2>Component lifecycle</h2><p>Common lifecycle events</p>
+<ul>
+<li>ngOnInit</li>
+<li>ngAfterContentInit</li>
+<li>ngAfterViewInit</li>
+<li>ngOnDestroy</li>
+</ul><aside class="notes"><p>Lifecycle events can be used to prepare to present content, setup custom event listeners, etc.</p></aside>
 </section>
 
 <section id="angular-pipes" class="slide" data-has-notes="true">
 <h2>Pipes</h2><blockquote>
 <p>An Angular pipe is a function that transforms input values to output values for display in a view.</p>
 </blockquote>
-<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Today is Apr 21, 2017 --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Today is {{ currentDate | date }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre><code class="lang-typescript">...
+
+<span class="hljs-meta">@Component</span>({
+  selector: <span class="hljs-string">'my-component'</span>,
+  template: <span class="hljs-string">`
+  &lt;!-- Today is Apr 21, 2017 --&gt;
+  &lt;span&gt;Today is {{ currentDate | date }}&lt;/span&gt;
+  `</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyComponent {
+  <span class="hljs-keyword">public</span> currentDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+}
 </code></pre><aside class="notes"><ul>
 <li>Pipes can be thought of as formatters</li>
 <li>Custom formatters can provide powerful functionality</li>
@@ -406,33 +344,66 @@ forkJoin - Runs all observable sequences in parallel and collect their last elem
 </section>
 </section>
 
-<section id="http" class="slide" data-has-notes="false">
-<h2>Angular HTTP Service</h2><blockquote>
-<p>Http is available as an injectable class, with methods to perform http requests</p>
-</blockquote>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
-<span class="hljs-keyword">import</span> { Http, Response } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/http'</span>;
-<span class="hljs-keyword">import</span> { Observable } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/Observable'</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">'rxjs/add/operator/catch'</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">'rxjs/add/operator/map'</span>;
-<span class="hljs-keyword">import</span> { Hero } <span class="hljs-keyword">from</span> <span class="hljs-string">'./hero'</span>;
-<span class="hljs-meta">@Injectable</span>()
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> HeroService {
-  <span class="hljs-keyword">private</span> heroesUrl = <span class="hljs-string">'api/heroes'</span>;  <span class="hljs-comment">// URL to web API</span>
-  <span class="hljs-keyword">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">private</span> http: Http</span>) {}
-  getHeroes(): Observable&lt;Hero[]&gt; {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.heroesUrl)
-                    .map(<span class="hljs-function">(<span class="hljs-params">res: Response</span>) =&gt;</span> res.json())
-                    .catch(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-                      <span class="hljs-comment">// Handle errors here</span>
-                    });
-  }
-}
+<section id="chapter-ng-cli" class="chapter">
+<section id="ng-cli-intro" class="slide" data-has-notes="true">
+<h2>Angular Cli</h2><blockquote>
+<p>The Angular CLI is a command line interface tool that can create a project, add files, and perform a variety of ongoing development tasks such as testing, bundling, and deployment.</p>
+</blockquote><aside class="notes"><p>Why would you want to use the Angular cli?</p>
+<p>Rapid development, Angular build setup is tedious</p></aside>
+</section>
+
+<section id="ng-cli-install" class="slide" data-has-notes="true">
+<h2>Angular Cli Installation</h2><pre><code class="lang-sh">npm i -g @angular/cli
+<span class="hljs-comment"># yarn global add @angular/cli</span>
+</code></pre><aside class="notes"><p>Angular Cli allows developers to rapidly develop applications with minimal setup</p></aside>
+</section>
+
+<section id="ng-cli-create-project" class="slide" data-has-notes="true">
+<h2>Create a project</h2><pre><code class="lang-sh">ng new --link-cli --routing --style scss my-project
 </code></pre>
+<pre><code>├── e2e
+├── package<span class="hljs-selector-class">.json</span>
+├── protractor<span class="hljs-selector-class">.conf</span><span class="hljs-selector-class">.js</span>
+├── src
+│   ├── app
+│   │   ├── app-routing<span class="hljs-selector-class">.module</span><span class="hljs-selector-class">.ts</span>
+│   │   ├── app<span class="hljs-selector-class">.component</span><span class="hljs-selector-class">.ts</span>
+│   │   └── app<span class="hljs-selector-class">.module</span><span class="hljs-selector-class">.ts</span>
+│   ├── index<span class="hljs-selector-class">.html</span>
+│   ├── main<span class="hljs-selector-class">.ts</span>
+│   ├── polyfills<span class="hljs-selector-class">.ts</span>
+│   ├── styles<span class="hljs-selector-class">.scss</span>
+├── tsconfig<span class="hljs-selector-class">.json</span>
+└── yarn.lock
+</code></pre><aside class="notes"><p>Global defaults can be set using <code>ng set --global</code> or by manually editing <code>~/.angular-cli.json</code></p>
+<p>Example: <code>ng set --global defaults.styleExt=scss</code></p></aside>
+</section>
+
+<section id="ng-cli-cheat-sheet" class="slide" data-has-notes="true">
+<h2>Angular Cli common commands</h2><ul>
+<li>new</li>
+<li>serve (server)</li>
+<li>build</li>
+<li>generate</li>
+<li>test</li>
+<li>e2e</li>
+<li>lint</li>
+</ul><aside class="notes"><p>Some commands are aliases</p>
+<p>serve =&gt; s
+build =&gt; b
+generate =&gt; g
+test =&gt; t
+e2e =&gt; e
+lint =&gt; l</p></aside>
+</section>
 </section>
 
 <section id="demo" class="slide" data-has-notes="false">
-<h2>Demo</h2>
+<h2>Demo</h2><ul>
+<li>Show parts of an Angular application</li>
+<li>Show examples of component types</li>
+<li>Show custom directives</li>
+</ul>
 </section>
 
 <section id="resources" class="slide" data-has-notes="false">
@@ -442,8 +413,13 @@ forkJoin - Runs all observable sequences in parallel and collect their last elem
 </ul>
 </section>
 
+<section id="questions" class="slide" data-has-notes="false">
+<h2>Questions?</h2>
+</section>
+
 <section id="thanks" class="slide" data-has-notes="false">
-<h2>Thanks!</h2>
+<h2>Thanks!</h2><p>Slides available at <a href="https://cmckni3.github.io/angular-deep-dive-presentation">https://cmckni3.github.io/angular-deep-dive-presentation</a>
+Demo code available at <a href="https://github.com/cmckni3/angular-deep-dive-demo">https://github.com/cmckni3/angular-deep-dive-demo</a></p>
 </section></div>
     </div>
 

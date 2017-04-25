@@ -2,9 +2,19 @@
 
 > An Angular pipe is a function that transforms input values to output values for display in a view.
 
-```html
-<!-- Today is Apr 21, 2017 -->
-<span>Today is {{ currentDate | date }}</span>
+```typescript
+...
+
+@Component({
+  selector: 'my-component',
+  template: `
+  <!-- Today is Apr 21, 2017 -->
+  <span>Today is {{ currentDate | date }}</span>
+  `
+})
+export class MyComponent {
+  public currentDate = new Date();
+}
 ```
 
 Note:

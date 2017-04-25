@@ -2,14 +2,10 @@
 
 > A category of directive that can listen to and modify the behavior of other HTML elements, attributes, properties, and components. They are usually represented as HTML attributes, hence the name.
 
+Common attribute directives:
 
-Example demonstrating the `ngClass` attribute directive and a custom `myHighlight` directive
-
-```html
-<my-app>
-  <div [ngClass]="{active: active}" [myHighlight]="color"></div>
-</my-app>
-```
+- ngClass
+- ngStyle
 
 Note:
 

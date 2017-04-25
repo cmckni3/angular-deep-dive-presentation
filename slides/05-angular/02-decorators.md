@@ -6,7 +6,6 @@ import { compact } from 'lodash';
 
 class Person {
   ...
-
   // deprecate the name method using a decorator
   @deprecate('Use the fullName method instead')
   get name() {
