@@ -1,0 +1,14 @@
+{
+  "name": "angular-deep-dive-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:cmckni3/angular-deep-dive-presentation.git",
+  "author": "Chris McKnight <cmckni3@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "prez --serve --print --such-notes --watch --theme=moon --title='Angular Deep Dive'"
+  },
+  "devDependencies": {
+    "prez": "^4.7.0"
+  }
+}
