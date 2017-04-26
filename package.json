@@ -7,6 +7,6 @@
   "license": "MIT",
   "scripts": {
     "build": "prez --theme=moon --title='Angular Deep Dive' --no-open-browser",
-    "start": "npm start -- --print --print-theme=simple --serve --such-notes --watch"
+    "start": "npm run build -- --print --print-theme=simple --serve --such-notes --watch"
   }
 }
