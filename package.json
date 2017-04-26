@@ -6,10 +6,7 @@
   "author": "Chris McKnight <cmckni3@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "prez --print --theme=moon --title='Angular Deep Dive' --no-open-browser",
-    "dev": "npm start -- --serve --such-notes --watch"
-  },
-  "devDependencies": {
-    "prez": "^4.7.0"
+    "build": "prez --theme=moon --title='Angular Deep Dive' --no-open-browser",
+    "start": "npm start -- --print --print-theme=simple --serve --such-notes --watch"
   }
 }

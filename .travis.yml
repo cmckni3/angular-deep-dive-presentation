@@ -1,9 +1,10 @@
 language: node_js
 node_js:
   - "6"
+cache: yarn
 before_install:
-  npm i -g prez
-script: npm start
+  yarn add global prez
+script: yarn build
 deploy:
   provider: pages
   skip_cleanup: true
