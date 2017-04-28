@@ -6,7 +6,7 @@
   "author": "Chris McKnight <cmckni3@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "prez --theme=moon --title='Angular Deep Dive' --no-open-browser",
+    "build": "prez --theme=moon --title='Angular Deep Dive' --description='Presentation and demo of Angular. See https://github.com/cmckni3/angular-deep-dive-presentation and https://github.com/cmckni3/angular-deep-dive-demo' --no-open-browser",
     "start": "npm run build -- --print --print-theme=simple --serve --such-notes --watch"
   }
 }
