@@ -2,11 +2,16 @@
   "name": "angular-deep-dive-presentation",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "repository": "git@github.com:cmckni3/angular-deep-dive-presentation.git",
   "author": "Chris McKnight <cmckni3@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "prez --theme=moon --title='Angular Deep Dive' --description='Presentation and demo of Angular. See https://github.com/cmckni3/angular-deep-dive-presentation and https://github.com/cmckni3/angular-deep-dive-demo' --no-open-browser",
-    "start": "npm run build -- --print --print-theme=simple --serve --such-notes --watch"
+    "build": "prez . dist --theme=moon --title='Angular Deep Dive' --description='Presentation and demo of Angular. See https://github.com/cmckni3/angular-deep-dive-presentation and https://github.com/cmckni3/angular-deep-dive-demo' --no-open-browser",
+    "start": "npm run build -- --print --print-theme=simple --serve --such-notes --watch",
+    "deploy": "npm run build && surge -p ."
+  },
+  "dependencies": {
+    "prez": "^4.0.0"
   }
 }
